@@ -2,7 +2,7 @@ CREATE DATABASE tecnostore_db;
 
 USE tecnostore_db;
 
--- Tabla celulare
+-- Tabla celulares
 
 CREATE TABLE celular (
     id INT NOT NULL AUTO_INCREMENT,
@@ -11,6 +11,8 @@ CREATE TABLE celular (
     correo_electronico VARCHAR(50) NOT NULL,
     sistema_operativo VARCHAR(50) NOT NULL,
     gama ENUM ('Alta','Media','Baja') NOT NULL,
+    precio DOUBLE NOT NULL,
+    stock INT NOT NULL
     PRIMARY KEY (id)
 );
 
