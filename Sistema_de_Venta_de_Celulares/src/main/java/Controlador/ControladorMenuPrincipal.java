@@ -2,28 +2,28 @@ package Controlador;
 
 import Vista.MenuPrincipal;
 import Utilidades.Mensaje;
-import Utilidades.Validacion;
+import Utilidades.ValidacionEntrada;
 public class ControladorMenuPrincipal {
 
     private MenuPrincipal menu;
+    
 
     public ControladorMenuPrincipal() {
         menu = new MenuPrincipal();
     }
 
-    public void iniciarPrograma() {
+    public void iniciarMenuPrincipal() {
         int op;
 
         do {
-            op = menu.mostrarMenu();
-            Validacion.validarOpMenu(op,0, 6);
-
+            menu.mostrarMenuPrincipal();
+            op = ValidacionEntrada.validacionOpMenu( 0, 6);
             switch (op) {
                 case 1:
                    
                     break;
                 case 2:
-                    
+                    ControladorMenuCliente.mostrarMenuCliente();
                     break;
                 case 3:
                    

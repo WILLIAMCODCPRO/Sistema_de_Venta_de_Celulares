@@ -6,6 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         ControladorMenuPrincipal inicioPrograma = new ControladorMenuPrincipal();
-        inicioPrograma.iniciarPrograma();
+        inicioPrograma.iniciarMenuPrincipal();
     }
 }

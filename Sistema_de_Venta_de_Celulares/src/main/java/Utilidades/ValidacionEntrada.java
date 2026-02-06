@@ -1,14 +1,10 @@
-
 package Utilidades;
 
-import java.util.Scanner;
-
-public class Validacion {
-
-    public static int validarOpMenu(int opMenu,int rango1, int rango2) {
+public class ValidacionEntrada {
+    public static int validacionOpMenu(int rango1, int rango2){
         while (true) {
             try {
-                opMenu = new Scanner(System.in).nextInt();
+                int opMenu = EntradaUsuario.entradaOpMenu();
                 if (opMenu <= rango1 || opMenu >= rango2) {
                     Mensaje.crearMensajePersonalizado("Opcion no valida intente de nuevo");
                 } else {
