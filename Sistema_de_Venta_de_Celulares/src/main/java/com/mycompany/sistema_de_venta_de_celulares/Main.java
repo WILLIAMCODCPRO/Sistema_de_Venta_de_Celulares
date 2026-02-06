@@ -1,11 +1,11 @@
 package com.mycompany.sistema_de_venta_de_celulares;
 
-import Vista.MenuPrincipal;
+import Controlador.ControladorMenuPrincipal;
 
 public class Main {
 
     public static void main(String[] args) {
-        MenuPrincipal menu = new MenuPrincipal();
-        menu.menuPrincipal();
+        ControladorMenuPrincipal inicioPrograma = new ControladorMenuPrincipal();
+        inicioPrograma.iniciarPrograma();
     }
 }
