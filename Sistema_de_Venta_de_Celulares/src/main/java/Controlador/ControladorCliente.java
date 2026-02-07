@@ -2,24 +2,24 @@
 package Controlador;
 
 
-import Utilidades.EntradaUsuario;
+import Utilidades.ValidacionEntrada;
 import Utilidades.Mensaje;
 import Modelo.Cliente;
 
 public class ControladorCliente {
     
-    protected Cliente registrarCliente(){
+    protected Cliente resgistar(){
         Mensaje.crearMensajePersonalizado("Nombre");
-        String nombre = EntradaUsuario.entradaString();
+        String nombre = ValidacionEntrada.validarString();
         
         Mensaje.crearMensajePersonalizado("identificacion");
-        String identificaion = EntradaUsuario.entradaString();
+        String identificaion = ValidacionEntrada.validarString();;
         
         Mensaje.crearMensajePersonalizado("correo");
-        String correo = EntradaUsuario.entradaString();
+        String correo = ValidacionEntrada.validarString();
         
         Mensaje.crearMensajePersonalizado("telefono");
-        String telefono = EntradaUsuario.entradaString();
+        String telefono = ValidacionEntrada.validarString();;
         
         return new Cliente(nombre, identificaion, correo, telefono);
     };

@@ -1,7 +1,8 @@
 package Utilidades;
 
 public class ValidacionEntrada {
-    public static int validacionOpMenu(int rango1, int rango2){
+
+    public static int validacionOpMenu(int rango1, int rango2) {
         while (true) {
             try {
                 int opMenu = EntradaUsuario.entradaOpMenu();
@@ -15,4 +16,16 @@ public class ValidacionEntrada {
             }
         }
     }
+
+    public static String validarString(){
+        String texto;
+        do {
+            texto = EntradaUsuario.entradaString().trim();
+            if (texto.isEmpty()) {
+                Mensaje.crearMensajePersonalizado("Texto vacio intente denuevo");
+            }
+        } while (texto.isEmpty());
+        return texto;
+    }
+
 }

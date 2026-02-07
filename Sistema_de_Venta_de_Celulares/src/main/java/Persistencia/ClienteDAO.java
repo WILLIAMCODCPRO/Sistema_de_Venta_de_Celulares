@@ -12,7 +12,7 @@ public class ClienteDAO {
     private Conexion conexion = new Conexion(); 
 
     
-    public void insertarCliente(Cliente cliente) {
+    public void guardar(Cliente cliente) {
         try (Connection c = conexion.conectar();) {
             PreparedStatement ps = c.prepareStatement("INSERT INTO cliente (nombre, identificacion, correo, telefono) VALUES (?, ?, ?, ?)");
             ps.setString(1, cliente.getNombre());
