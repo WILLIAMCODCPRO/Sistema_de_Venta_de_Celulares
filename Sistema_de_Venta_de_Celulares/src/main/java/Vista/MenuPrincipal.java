@@ -1,5 +1,7 @@
 package Vista;
 
+import Utilidades.Mensaje;
+
 
 public class MenuPrincipal {
 
@@ -13,7 +15,7 @@ public class MenuPrincipal {
                        5.   Salir
                        ******************************
                        """);
-        
+        Mensaje.crearMensajePersonalizado("Que accion deseas realizar");
 
     }
 }

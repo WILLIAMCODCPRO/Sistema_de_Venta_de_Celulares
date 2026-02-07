@@ -5,25 +5,26 @@ import Utilidades.Mensaje;
 import Utilidades.ValidacionEntrada;
 public class ControladorMenuPrincipal {
 
-    private MenuPrincipal menu;
+    private MenuPrincipal menuPrincipal;
     
 
     public ControladorMenuPrincipal() {
-        menu = new MenuPrincipal();
+        menuPrincipal = new MenuPrincipal();
+        
     }
 
     public void iniciarMenuPrincipal() {
         int op;
 
         do {
-            menu.mostrarMenuPrincipal();
+            menuPrincipal.mostrarMenuPrincipal();
             op = ValidacionEntrada.validacionOpMenu( 0, 6);
             switch (op) {
                 case 1:
                    
                     break;
                 case 2:
-                    ControladorMenuCliente.mostrarMenuCliente();
+                    new ControladorMenuCliente().iniciarMenuCliente();
                     break;
                 case 3:
                    

@@ -1,5 +1,7 @@
 package Vista;
 
+import Utilidades.Mensaje;
+
 public class MenuCliente {
     
     public void mostrarMenuCliente(){
@@ -12,5 +14,6 @@ public class MenuCliente {
                        5.   Salir
                        ******************************
                        """);
+        Mensaje.crearMensajePersonalizado("Que accion deseas realizar");
     }
 }
