@@ -8,4 +8,9 @@ public class EntradaUsuario {
         int op = new Scanner(System.in).nextInt();
         return op;
     }
+    
+    public static String entradaString(){
+        String stringUsuario = new Scanner(System.in).nextLine();
+        return stringUsuario;
+    }
 }

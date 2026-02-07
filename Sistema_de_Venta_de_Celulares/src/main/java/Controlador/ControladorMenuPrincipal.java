@@ -6,11 +6,11 @@ import Utilidades.ValidacionEntrada;
 public class ControladorMenuPrincipal {
 
     private MenuPrincipal menuPrincipal;
-    
+    private ControladorMenuCliente menuCliente;
 
     public ControladorMenuPrincipal() {
         menuPrincipal = new MenuPrincipal();
-        
+        menuCliente = new ControladorMenuCliente();
     }
 
     public void iniciarMenuPrincipal() {
@@ -24,7 +24,7 @@ public class ControladorMenuPrincipal {
                    
                     break;
                 case 2:
-                    new ControladorMenuCliente().iniciarMenuCliente();
+                    menuCliente.iniciarMenuCliente();
                     break;
                 case 3:
                    
