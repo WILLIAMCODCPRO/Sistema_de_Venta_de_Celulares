@@ -1,5 +1,7 @@
 package Utilidades;
 
+
+
 public class ValidacionEntrada {
 
     public static int validacionOpMenu(int rango1, int rango2) {
@@ -26,6 +28,18 @@ public class ValidacionEntrada {
             }
         } while (texto.isEmpty());
         return texto;
+    }
+
+    public static String validarCorreo() {
+        String correoValido = "[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}";
+        String correo;
+        do {
+            correo = validarString();
+            if (!correo.matches(correoValido)) {
+                Mensaje.crearMensajePersonalizado("Esto no es un correo intente denuevo");
+            }
+        } while (!correo.matches(correoValido));
+        return correo;
     }
 
 }

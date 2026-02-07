@@ -13,10 +13,10 @@ public class ControladorCliente {
         String nombre = ValidacionEntrada.validarString();
         
         Mensaje.crearMensajePersonalizado("identificacion");
-        String identificaion = ValidacionEntrada.validarString();;
+        String identificaion = ValidacionEntrada.validarString();
         
         Mensaje.crearMensajePersonalizado("correo");
-        String correo = ValidacionEntrada.validarString();
+        String correo = ValidacionEntrada.validarCorreo();
         
         Mensaje.crearMensajePersonalizado("telefono");
         String telefono = ValidacionEntrada.validarString();;
