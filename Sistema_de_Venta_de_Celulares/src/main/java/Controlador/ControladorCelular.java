@@ -5,8 +5,10 @@ import Modelo.CategoriaGama;
 import Utilidades.ValidacionEntrada;
 import Utilidades.Mensaje;
 import Modelo.Celular;
+import Modelo.CelularBaseDeDatos;
 import Persistencia.CelularDAO;
 import Modelo.FactoryCelular;
+import java.util.ArrayList;
 
 public class ControladorCelular {
     private CelularDAO celularDAO;
@@ -61,4 +63,11 @@ public class ControladorCelular {
         }
         return null;
     }
+    
+    protected ArrayList obtener(){
+        ArrayList<CelularBaseDeDatos>listaCelulares = celularDAO.listar();
+        return listaCelulares;
+    }
+    
+   
 }

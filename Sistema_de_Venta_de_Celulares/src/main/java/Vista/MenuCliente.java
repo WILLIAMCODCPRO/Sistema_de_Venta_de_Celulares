@@ -8,7 +8,7 @@ public class MenuCliente {
         System.out.println("""
                        ******************************
                        1.   Registrar Cliente.
-                       2.   Ver Cliente.
+                       2.   Listar Clientes.
                        3.   Editar Cliente.
                        4.   Borrar Cliente.
                        5.   Salir

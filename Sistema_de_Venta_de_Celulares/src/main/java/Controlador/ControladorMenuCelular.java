@@ -5,7 +5,9 @@ import Utilidades.Mensaje;
 import Utilidades.ValidacionEntrada;
 import Vista.MenuCelular;
 import Modelo.Celular;
+import Modelo.CelularBaseDeDatos;
 import Persistencia.CelularDAO;
+import java.util.ArrayList;
 
 public class ControladorMenuCelular {
 
@@ -33,7 +35,8 @@ public class ControladorMenuCelular {
                     celularDAO.guardar(guardarCelular);
                     break;
                 case 2:
-                    
+                    ArrayList<CelularBaseDeDatos> listarCelulares = controladorCelular.obtener();
+                    menuCelular.listar(listarCelulares);
                     break;
                 case 3:
 

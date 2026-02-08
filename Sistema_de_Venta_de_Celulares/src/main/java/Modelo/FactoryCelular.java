@@ -12,4 +12,6 @@ public class FactoryCelular {
             case Baja -> new CelularGamaBaja(marca, modelo, sistema_operativo, precio, stock);
         };
     }
+    
+    
 }
