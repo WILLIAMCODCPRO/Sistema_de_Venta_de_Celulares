@@ -18,7 +18,7 @@ public class ControladorMenuPrincipal {
 
         do {
             menuPrincipal.mostrarMenuPrincipal();
-            op = ValidacionEntrada.validacionOpMenu( 0, 6);
+            op = ValidacionEntrada.validacionOpUsuario( 0, 6);
             switch (op) {
                 case 1:
                    

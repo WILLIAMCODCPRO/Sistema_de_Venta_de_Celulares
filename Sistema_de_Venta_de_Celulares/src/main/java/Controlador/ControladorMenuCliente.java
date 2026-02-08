@@ -24,10 +24,11 @@ public class ControladorMenuCliente {
 
         do {
             menuCliente.mostrarMenuCliente();
-            op = ValidacionEntrada.validacionOpMenu(0, 6);
+            op = ValidacionEntrada.validacionOpUsuario(0, 6);
             switch (op) {
                 case 1:
-                    Cliente guardarCliente = controladorCliente.resgistar();
+                    Cliente guardarCliente = controladorCliente.resgistrar();
+                    if (guardarCliente == null) break;
                     clienteDAO.guardar(guardarCliente);
                     break;
                 case 2:
