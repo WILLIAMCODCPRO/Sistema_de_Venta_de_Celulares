@@ -7,24 +7,26 @@ public class ControladorMenuPrincipal {
 
     private MenuPrincipal menuPrincipal;
     private ControladorMenuCliente menuCliente;
+    private ControladorMenuCelular menuCelular;
 
     public ControladorMenuPrincipal() {
         menuPrincipal = new MenuPrincipal();
         menuCliente = new ControladorMenuCliente();
+        menuCelular = new ControladorMenuCelular();
     }
 
-    public void iniciarMenuPrincipal() {
+    public void iniciarMenu() {
         int op;
 
         do {
-            menuPrincipal.mostrarMenuPrincipal();
+            menuPrincipal.mostrarMenu();
             op = ValidacionEntrada.validacionOpUsuario( 0, 6);
             switch (op) {
                 case 1:
-                   
+                   menuCelular.iniciarMenu();
                     break;
                 case 2:
-                    menuCliente.iniciarMenuCliente();
+                    menuCliente.iniciarMenu();
                     break;
                 case 3:
                    

@@ -4,7 +4,7 @@ import Utilidades.Mensaje;
 
 public class MenuCliente {
     
-    public void mostrarMenuCliente(){
+    public void mostrarMenu(){
         System.out.println("""
                        ******************************
                        1.   Registrar Cliente.

@@ -1,21 +1,22 @@
 package Controlador;
 
+
 import Utilidades.Mensaje;
 import Utilidades.ValidacionEntrada;
-import Vista.MenuCliente;
-import Modelo.Cliente;
-import Persistencia.ClienteDAO;
+import Vista.MenuCelular;
+import Modelo.Celular;
+import Persistencia.CelularDAO;
 
-public class ControladorMenuCliente {
+public class ControladorMenuCelular {
 
-    private MenuCliente menuCliente;
-    private ClienteDAO clienteDAO;
-    private ControladorCliente controladorCliente;
+    private MenuCelular menuCelular;
+    private CelularDAO celularDAO;
+    private ControladorCelular controladorCelular;
 
-    protected ControladorMenuCliente() {
-        menuCliente = new MenuCliente();
-        clienteDAO = new ClienteDAO();
-        controladorCliente = new ControladorCliente();
+    protected ControladorMenuCelular() {
+        menuCelular = new MenuCelular();
+        celularDAO = new CelularDAO();
+        controladorCelular = new ControladorCelular();
     }
 
     protected void iniciarMenu() {
@@ -23,13 +24,13 @@ public class ControladorMenuCliente {
         int op;
 
         do {
-            menuCliente.mostrarMenu();
+            menuCelular.mostrarMenu();
             op = ValidacionEntrada.validacionOpUsuario(0, 6);
             switch (op) {
                 case 1:
-                    Cliente guardarCliente = controladorCliente.resgistrar();
-                    if (guardarCliente == null) break;
-                    clienteDAO.guardar(guardarCliente);
+                    Celular guardarCelular = controladorCelular.resgistrar();
+                    if (guardarCelular == null) break;
+                    celularDAO.guardar(guardarCelular);
                     break;
                 case 2:
                     

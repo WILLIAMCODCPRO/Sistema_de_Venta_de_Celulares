@@ -2,44 +2,17 @@ CREATE DATABASE tecnostore_db;
 
 USE tecnostore_db;
 
--- Tabla marca
-
-CREATE TABLE marca(
-    id INT NOT NULL AUTO_INCREMENT,
-    nombre_marca VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id)
-);
-
--- Tabla modelo
-
-CREATE TABLE modelo(
-    id INT NOT NULL AUTO_INCREMENT,
-    nombre_modelo VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id)
-);
-
--- Tabla sistema operativo
-
-CREATE TABLE sistema_operativo(
-    id INT NOT NULL AUTO_INCREMENT,
-    nombre_sistema_operativo VARCHAR(50) NOT NULL,
-    PRIMARY KEY (id)
-);
-
--- Tabla celulares
+-- Tabla Celular
 
 CREATE TABLE celular (
     id INT NOT NULL AUTO_INCREMENT,
-    id_marca INT NOT NULL,
-    id_modelo INT NOT NULL,
-    id_sistema_operativo INT NOT NULL,
+    marca VARCHAR(50)  NOT NULL,
+    modelo VARCHAR(50) NOT NULL,
+    sistema_operativo VARCHAR(50) NOT NULL,
     gama ENUM ('Alta','Media','Baja') NOT NULL,
     precio DOUBLE NOT NULL,
     stock INT NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (id_marca) REFERENCES marca(id),
-    FOREIGN KEY (id_modelo) REFERENCES modelo(id),
-    FOREIGN KEY (id_sistema_operativo) REFERENCES sistema_operativo(id)
+    PRIMARY KEY (id)
 );
 
 -- Tabla Cliente

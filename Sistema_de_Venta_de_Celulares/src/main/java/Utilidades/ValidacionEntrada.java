@@ -1,7 +1,5 @@
 package Utilidades;
 
-
-
 public class ValidacionEntrada {
 
     public static int validacionOpUsuario(int rango1, int rango2) {
@@ -15,6 +13,36 @@ public class ValidacionEntrada {
                 }
             } catch (Exception e) {
                 Mensaje.crearMensajePersonalizado("Opcion no valida intente de nuevo");
+            }
+        }
+    }
+
+    public static int validacionPrecio() {
+        while (true) {
+            try {
+                int opUsuario = EntradaUsuario.entradaOpMenu();
+                if (opUsuario <= 0) {
+                    Mensaje.crearMensajePersonalizado("El precio no puede ser 0 o ser negativo");
+                } else {
+                    return opUsuario;
+                }
+            } catch (Exception e) {
+                Mensaje.crearMensajePersonalizado("Valor no valido");
+            }
+        }
+    }
+
+    public static int validacionStock() {
+        while (true) {
+            try {
+                int opUsuario = EntradaUsuario.entradaOpMenu();
+                if (opUsuario < 0) {
+                    Mensaje.crearMensajePersonalizado("El stock no puede ser negativo");
+                } else {
+                    return opUsuario;
+                }
+            } catch (Exception e) {
+                Mensaje.crearMensajePersonalizado("Valor no valido");
             }
         }
     }

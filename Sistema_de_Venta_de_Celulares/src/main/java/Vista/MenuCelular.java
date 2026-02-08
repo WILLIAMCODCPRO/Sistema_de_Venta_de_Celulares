@@ -1,21 +1,20 @@
+
 package Vista;
 
 import Utilidades.Mensaje;
 
 
-public class MenuPrincipal {
-
-    public void mostrarMenu() {
+public class MenuCelular {
+    public void mostrarMenu(){
         System.out.println("""
                        ******************************
-                       1.   Gestionar Celulares.
-                       2.   Gestionar Clientes.
-                       3.   Gestionar Ventas.
-                       4.   Ver Reportes.
+                       1.   Registrar Celular.
+                       2.   Ver Celular.
+                       3.   Editar Celular.
+                       4.   Borrar Celular.
                        5.   Salir
                        ******************************
                        """);
         Mensaje.crearMensajePersonalizado("Que accion deseas realizar");
-
     }
 }
