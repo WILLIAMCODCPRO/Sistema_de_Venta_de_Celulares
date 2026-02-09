@@ -23,6 +23,9 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    public Cliente() {
+    }
+
     public int getId() {
         return id;
     }
@@ -55,9 +58,26 @@ public class Cliente {
         return telefono;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+    
+     @Override
+public String toString() {
+    return """
+           *****************************
+           #Cliente %s      
+           Nombre:         %s
+           Identificacion: %s
+           Correo:         %s
+           Telefono:       %s
+           
+           """.formatted(id, nombre, identificacion, correo,telefono);
+}
     
     
 }

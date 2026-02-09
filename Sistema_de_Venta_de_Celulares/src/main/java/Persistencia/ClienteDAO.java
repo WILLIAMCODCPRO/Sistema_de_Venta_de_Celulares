@@ -31,7 +31,7 @@ public class ClienteDAO {
     public ArrayList<Cliente> listar() {
         ArrayList<Cliente> clientes = new ArrayList<>();
         try (Connection c = conexion.conectar();) {
-            PreparedStatement ps = c.prepareStatement("selec * from cliente");
+            PreparedStatement ps = c.prepareStatement("select * from cliente");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 clientes.add(new Cliente(rs.getInt("id"),rs.getString("nombre"),rs.getString("identificacion"),rs.getString("correo"),rs.getString("telefono")));
@@ -59,5 +59,30 @@ public class ClienteDAO {
         }
         return false;
     }
+    
+    public Cliente buscar(int id){
+        Cliente cliente = new Cliente();
+        try (Connection c = conexion.conectar();) {
+            PreparedStatement ps = c.prepareStatement("select * from cliente WHERE id=?");
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) { 
+            cliente.setId(rs.getInt("id"));
+            cliente.setNombre(rs.getString("nombre"));
+            cliente.setIdentificacion(rs.getString("identificacion"));
+            cliente.setCorreo(rs.getString("correo"));
+            cliente.setTelefono(rs.getString("telefono"));
+            
+        } else {
+            Mensaje.crearMensajePersonalizado("No hay ningun cliente con ese id, intenta de nuevo");
+            return null;
+        }
+        } catch (SQLException e) {
+            Mensaje.crearMensajePersonalizado("Hubo un error al buscar el id: " + e.getMessage());
+        }
+        return cliente;
+    }
+    
+    
 }
 

@@ -89,7 +89,8 @@ public class CelularDAO {
             celular.setPrecio(rs.getDouble("precio"));
             celular.setStock(rs.getInt("stock"));
         } else {
-            Mensaje.crearMensajePersonalizado("No hay ningun celular con ese id");
+            Mensaje.crearMensajePersonalizado("No hay ningun celular con ese id, intenta de nuevo");
+            return null;
         }
         } catch (SQLException e) {
             Mensaje.crearMensajePersonalizado("Hubo un error al buscar el id: " + e.getMessage());

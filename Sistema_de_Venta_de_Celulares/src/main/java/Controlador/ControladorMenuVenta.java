@@ -27,8 +27,7 @@ public class ControladorMenuVenta {
             menuVenta.mostrarMenu();
             op = ValidacionEntrada.validacionOpUsuario(0, 3);
             switch (op) {
-                case 1 -> {
-                }
+                case 1 -> controladorVenta.resgistrar();
                 case 2 -> Mensaje.crearMensajePersonalizado("Volviendo al menu principal");
                
             }

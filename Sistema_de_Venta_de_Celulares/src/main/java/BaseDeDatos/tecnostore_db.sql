@@ -32,7 +32,7 @@ CREATE TABLE venta (
     id INT NOT NULL AUTO_INCREMENT,
     id_cliente INT NOT NULL,
     fecha DATETIME DEFAULT NOW() NOT NULL,
-    total DOUBLE NOT NULL,
+    total DOUBLE DEFAULT 0,
     PRIMARY KEY (id),
     FOREIGN KEY (id_cliente) REFERENCES cliente(id)
 );

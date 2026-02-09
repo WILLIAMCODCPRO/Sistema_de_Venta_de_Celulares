@@ -1,6 +1,8 @@
 package Vista;
 
+import Modelo.Cliente;
 import Utilidades.Mensaje;
+import java.util.ArrayList;
 
 public class MenuCliente {
     
@@ -15,6 +17,15 @@ public class MenuCliente {
                        ******************************
                        """);
         Mensaje.crearMensajePersonalizado("Que accion deseas realizar");
+    }
+    
+     public void listar(ArrayList<Cliente> clientes) {
+        if (clientes.isEmpty()) {
+            Mensaje.crearMensajePersonalizado("No hay clientes registrados.");
+        } else {
+            clientes.forEach(System.out::println);
+        }
+
     }
     
    
