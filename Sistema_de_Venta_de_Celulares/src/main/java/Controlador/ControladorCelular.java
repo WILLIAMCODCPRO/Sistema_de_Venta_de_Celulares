@@ -1,4 +1,3 @@
-
 package Controlador;
 
 import Modelo.CategoriaGama;
@@ -103,10 +102,10 @@ public class ControladorCelular {
                         default ->
                             throw new IllegalStateException("No se supone que debes verme");
                     };
-                    
+
                     celularBuscado.setGama(nuevaGama);
                 }
-                case 5 -> { 
+                case 5 -> {
                     Mensaje.crearMensajePersonalizado("Ingresa el nuevo precio");
                     celularBuscado.setPrecio(ValidacionEntrada.validacionMayor0("El precio no puede ser 0 o negativo"));
                 }
@@ -121,6 +120,18 @@ public class ControladorCelular {
 
         } else {
             Mensaje.crearMensajePersonalizado("Cancelando editar celular");
+        }
+    }
+    
+    protected void borrar(){
+        Mensaje.crearMensajePersonalizado("Ingrese el id del celular que quieras borrar");
+        int op = ValidacionEntrada.validacionMayor0("El id no puede ser 0 o negativo");
+        Mensaje.crearMensajePersonalizado("Seguro que quieres eliminar este celular: 1.SI  2.NO");
+        int confirmacion = ValidacionEntrada.validacionOpUsuario(0, 3);
+        if (confirmacion == 1) {
+            celularDAO.eliminar(op);
+        } else if(confirmacion == 2){
+            Mensaje.crearMensajePersonalizado("Elimicaion canselada");
         }
     }
 

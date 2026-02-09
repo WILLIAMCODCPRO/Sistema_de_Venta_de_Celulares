@@ -96,4 +96,15 @@ public class CelularDAO {
         }
         return celular;
     }
+    
+    public void eliminar(int id){
+        try (Connection c = conexion.conectar();) {
+            PreparedStatement ps = c.prepareStatement("delete from celular where id=?");
+            ps.setInt(1, id);
+            ps.executeUpdate(); 
+            Mensaje.crearMensajePersonalizado("Celular eliminado con exito");
+        } catch (SQLException e) {
+            Mensaje.crearMensajePersonalizado("Hubo un error al intentar eliminar " + e.getMessage());
+        }
+    }
 }

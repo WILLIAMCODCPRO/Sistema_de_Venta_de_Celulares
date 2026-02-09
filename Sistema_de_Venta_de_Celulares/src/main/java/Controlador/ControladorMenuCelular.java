@@ -41,8 +41,7 @@ public class ControladorMenuCelular {
                     menuCelular.listar(listarCelulares);
                 }
                 case 3 -> controladorCelular.editar();
-                case 4 -> {
-                }
+                case 4 -> controladorCelular.borrar();
                 case 5 -> Mensaje.crearMensajePersonalizado("Volviendo al menu principal");
             }
         } while (op != 5);
