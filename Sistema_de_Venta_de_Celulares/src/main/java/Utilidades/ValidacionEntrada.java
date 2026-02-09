@@ -17,12 +17,12 @@ public class ValidacionEntrada {
         }
     }
 
-    public static int validacionPrecio() {
+    public static int validacionMayor0(String mensaje) {
         while (true) {
             try {
                 int opUsuario = EntradaUsuario.entradaOpMenu();
                 if (opUsuario <= 0) {
-                    Mensaje.crearMensajePersonalizado("El precio no puede ser 0 o ser negativo");
+                    Mensaje.crearMensajePersonalizado(mensaje);
                 } else {
                     return opUsuario;
                 }
@@ -46,6 +46,8 @@ public class ValidacionEntrada {
             }
         }
     }
+    
+    
 
     public static String validarString(){
         String texto;

@@ -14,6 +14,7 @@ public class ControladorMenuCelular {
     private MenuCelular menuCelular;
     private CelularDAO celularDAO;
     private ControladorCelular controladorCelular;
+    
 
     protected ControladorMenuCelular() {
         menuCelular = new MenuCelular();
@@ -29,24 +30,20 @@ public class ControladorMenuCelular {
             menuCelular.mostrarMenu();
             op = ValidacionEntrada.validacionOpUsuario(0, 6);
             switch (op) {
-                case 1:
+                case 1 -> {
+                    menuCelular.listarGama();
                     Celular guardarCelular = controladorCelular.resgistrar();
                     if (guardarCelular == null) break;
                     celularDAO.guardar(guardarCelular);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     ArrayList<CelularBaseDeDatos> listarCelulares = controladorCelular.obtener();
                     menuCelular.listar(listarCelulares);
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                case 5:
-                    Mensaje.crearMensajePersonalizado("Volviendo al menu principal");
-                    break;
+                }
+                case 3 -> controladorCelular.editar();
+                case 4 -> {
+                }
+                case 5 -> Mensaje.crearMensajePersonalizado("Volviendo al menu principal");
             }
         } while (op != 5);
 

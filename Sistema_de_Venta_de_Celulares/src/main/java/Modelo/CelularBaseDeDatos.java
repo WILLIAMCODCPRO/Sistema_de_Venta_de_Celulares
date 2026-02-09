@@ -9,6 +9,16 @@ public class CelularBaseDeDatos extends Celular {
         super(marca, modelo, sistema_operativo, gama, precio, stock);
         this.id = id;
     }
+
+    public CelularBaseDeDatos() {
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    
+    
     
     @Override
 public String toString() {

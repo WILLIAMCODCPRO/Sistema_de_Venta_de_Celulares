@@ -22,22 +22,16 @@ public class ControladorMenuPrincipal {
             menuPrincipal.mostrarMenu();
             op = ValidacionEntrada.validacionOpUsuario( 0, 6);
             switch (op) {
-                case 1:
-                   menuCelular.iniciarMenu();
-                    break;
-                case 2:
-                    menuCliente.iniciarMenu();
-                    break;
-                case 3:
-                   
-                    break;
-                case 4:
-                    
-                    break;
-                case 5:
+                case 1 -> menuCelular.iniciarMenu();
+                case 2 -> menuCliente.iniciarMenu();
+                case 3 -> {
+                }
+                case 4 -> {
+                }
+                case 5 -> {
                     Mensaje.crearMensajePersonalizado("Saliendo del Programa");
                     Mensaje.crearMensajePersonalizado("Gracias por su visita");
-                    break;
+                }
             }
         } while (op != 5);
     }

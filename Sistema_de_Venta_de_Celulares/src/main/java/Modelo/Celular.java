@@ -17,6 +17,10 @@ public abstract class Celular {
         this.precio = precio;
         this.stock = stock;
     }
+    
+    public Celular(){
+        
+    }
 
    
 
@@ -63,6 +67,10 @@ public abstract class Celular {
     
     public CategoriaGama getGama() {
         return gama;
+    }
+
+    public void setGama(CategoriaGama gama) {
+        this.gama = gama;
     }
 
 }
