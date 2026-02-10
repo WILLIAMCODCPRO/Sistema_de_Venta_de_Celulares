@@ -4,8 +4,9 @@ import Modelo.CelularBaseDeDatos;
 import Utilidades.Mensaje;
 import java.util.ArrayList;
 
-public class MenuCelular {
+public class MenuCelular implements Menu {
 
+    @Override
     public void mostrarMenu() {
         System.out.println("""
                        ******************************

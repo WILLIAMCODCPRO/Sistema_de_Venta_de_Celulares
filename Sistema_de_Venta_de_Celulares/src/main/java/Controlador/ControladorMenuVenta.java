@@ -1,8 +1,8 @@
 
 package Controlador;
 
-import Modelo.Venta;
-import Persistencia.VentaDAO;
+
+
 import Utilidades.Mensaje;
 import Utilidades.ValidacionEntrada;
 import Vista.MenuVenta;
@@ -10,12 +10,10 @@ import Vista.MenuVenta;
 
 public class ControladorMenuVenta {
     private MenuVenta menuVenta;
-    private VentaDAO ventaDAO;
     private ControladorVenta controladorVenta;
 
     protected ControladorMenuVenta() {
         menuVenta = new MenuVenta();
-        ventaDAO = new VentaDAO();
         controladorVenta = new ControladorVenta();
     }
 
@@ -25,13 +23,14 @@ public class ControladorMenuVenta {
 
         do {
             menuVenta.mostrarMenu();
-            op = ValidacionEntrada.validacionOpUsuario(0, 3);
+            op = ValidacionEntrada.validacionOpUsuario(0, 4);
             switch (op) {
                 case 1 -> controladorVenta.resgistrar();
-                case 2 -> Mensaje.crearMensajePersonalizado("Volviendo al menu principal");
+                case 2 -> controladorVenta.listar();
+                case 3 -> Mensaje.crearMensajePersonalizado("Volviendo al menu principal");
                
             }
-        } while (op != 2);
+        } while (op != 3);
 
     }
 }

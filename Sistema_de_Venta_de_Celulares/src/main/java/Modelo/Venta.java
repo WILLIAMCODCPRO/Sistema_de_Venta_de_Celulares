@@ -1,10 +1,12 @@
 
 package Modelo;
 
+import java.time.LocalDateTime;
+
 public class Venta {
     private int id_venta;
     private int id_cliente;
-    private String fecha;
+    private LocalDateTime fecha;
     private double total;
 
     public Venta(int id_cliente) {
@@ -34,13 +36,15 @@ public class Venta {
         this.id_cliente = id_cliente;
     }
 
-    public String getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
+
+    
 
     public double getTotal() {
         return total;

@@ -4,8 +4,9 @@ import Modelo.Cliente;
 import Utilidades.Mensaje;
 import java.util.ArrayList;
 
-public class MenuCliente {
+public class MenuCliente implements Menu {
     
+    @Override
     public void mostrarMenu(){
         System.out.println("""
                        ******************************

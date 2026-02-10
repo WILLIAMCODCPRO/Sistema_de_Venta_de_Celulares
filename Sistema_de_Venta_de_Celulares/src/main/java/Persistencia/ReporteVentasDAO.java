@@ -2,6 +2,8 @@
 package Persistencia;
 
 
-public class ReporteVentasDAO {
+
+public class ReporteVentasDAO  {
+    
     
 }

@@ -3,8 +3,9 @@ package Vista;
 import Utilidades.Mensaje;
 
 
-public class MenuPrincipal {
+public class MenuPrincipal implements Menu {
 
+    @Override
     public void mostrarMenu() {
         System.out.println("""
                        ******************************

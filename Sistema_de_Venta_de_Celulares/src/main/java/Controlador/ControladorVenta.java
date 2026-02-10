@@ -5,15 +5,18 @@ package Controlador;
 import Modelo.CelularBaseDeDatos;
 import Modelo.Cliente;
 import Modelo.DetalleVenta;
+import Modelo.Factura;
 import Modelo.Venta;
 import Persistencia.CelularDAO;
 import Persistencia.ClienteDAO;
 import Persistencia.DetalleVentaDAO;
+import Persistencia.FacturaDAO;
 import Persistencia.VentaDAO;
 import Utilidades.Mensaje;
 import Utilidades.ValidacionEntrada;
 import Vista.MenuCelular;
 import Vista.MenuCliente;
+import Vista.MenuVenta;
 import java.util.ArrayList;
 
 
@@ -23,11 +26,14 @@ public class ControladorVenta {
     private VentaDAO ventaDAO;
     private CelularDAO celularDAO;
     private ClienteDAO clienteDAO;
+    private FacturaDAO facturaDAO;
     private MenuCliente clienteMenu;
     private MenuCelular celularMenu;
+    private MenuVenta ventaMenu;
     private DetalleVentaDAO detalleVentaDAO;
     private DetalleVenta detalleVenta;
     private Venta venta;
+    
     
   
     
@@ -41,6 +47,9 @@ public class ControladorVenta {
         detalleVentaDAO = new DetalleVentaDAO();
         detalleVenta = new DetalleVenta();
         venta = new Venta();
+        ventaMenu = new MenuVenta();
+        facturaDAO = new FacturaDAO();
+        
         
     }
 
@@ -108,11 +117,23 @@ public class ControladorVenta {
             celularEncontrado.setStock(restarStock);
             celularDAO.editar(celularEncontrado, id_celular);
             
+            
+           /// Generar Factura
+           Venta datosVenta = ventaDAO.buscar(idVenta);
+           Factura factura = new Factura(clienteEncontrado.getNombre(),datosVenta.getFecha(),celularEncontrado.getModelo(),cantidad,datosVenta.getTotal());
+           ventaMenu.generarFactura(factura);
+           facturaDAO.guardarFacturaVenta(factura);
+           
+            
         }
         if (confirmacion == 2) {
             Mensaje.crearMensajePersonalizado("Registro Canselado");
             
         }
+        
+    }
+    
+    protected void listar(){
         
     }
 }
