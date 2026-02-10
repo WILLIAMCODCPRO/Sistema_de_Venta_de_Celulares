@@ -55,6 +55,7 @@ public class ControladorCelular {
         Mensaje.crearMensajePersonalizado("Deseas registar el celular: 1.SI  2.NO");
         int confirmacion = ValidacionEntrada.validacionOpUsuario(0, 3);
         if (confirmacion == 1) {
+            
             return factoryCelular.crearCelular(gamaSeleccionada, marca, modelo, sistema_operativo, precio, stock);
         }
         if (confirmacion == 2) {
@@ -116,6 +117,7 @@ public class ControladorCelular {
                 default ->
                     Mensaje.crearMensajePersonalizado("opcion no valida");
             }
+            Mensaje.crearMensajePersonalizado("Celular editado con exito");
             celularDAO.editar(celularBuscado, id);
 
         } else {
