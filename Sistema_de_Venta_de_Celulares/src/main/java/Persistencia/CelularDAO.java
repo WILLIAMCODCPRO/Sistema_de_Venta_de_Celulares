@@ -68,32 +68,32 @@ public class CelularDAO {
             ps.setInt(6, celularBaseDeDatos.getStock());
             ps.setInt(7, id);
             ps.executeUpdate(); 
-            Mensaje.crearMensajePersonalizado("Celular editado con exito");
+            
         } catch (SQLException e) {
             Mensaje.crearMensajePersonalizado("Hubo un error al editar el celular: " + e.getMessage());
         }
     }
     
-    public CelularBaseDeDatos buscar(int id){
+    public CelularBaseDeDatos buscar(int id) {
         CelularBaseDeDatos celular = new CelularBaseDeDatos();
         try (Connection c = conexion.conectar();) {
             PreparedStatement ps = c.prepareStatement("select * from celular WHERE id=?");
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
-            if (rs.next()) { 
-            celular.setId(rs.getInt("id"));
-            celular.setMarca(rs.getString("marca"));
-            celular.setModelo(rs.getString("modelo"));
-            celular.setSistema_operativo(rs.getString("sistema_operativo"));
-            celular.setGama(CategoriaGama.valueOf(rs.getString("gama")));
-            celular.setPrecio(rs.getDouble("precio"));
-            celular.setStock(rs.getInt("stock"));
-        } else {
-            Mensaje.crearMensajePersonalizado("No hay ningun celular con ese id, intenta de nuevo");
-            return null;
-        }
+            if (rs.next()) {
+                celular.setId(rs.getInt("id"));
+                celular.setMarca(rs.getString("marca"));
+                celular.setModelo(rs.getString("modelo"));
+                celular.setSistema_operativo(rs.getString("sistema_operativo"));
+                celular.setGama(CategoriaGama.valueOf(rs.getString("gama")));
+                celular.setPrecio(rs.getDouble("precio"));
+                celular.setStock(rs.getInt("stock"));
+            } else {
+                Mensaje.crearMensajePersonalizado("Ese celular no existe, intenta de nuevo");
+                return null;
+            }
         } catch (SQLException e) {
-            Mensaje.crearMensajePersonalizado("Hubo un error al buscar el id: " + e.getMessage());
+            Mensaje.crearMensajePersonalizado("Hubo un error al buscar el celular: " + e.getMessage());
         }
         return celular;
     }

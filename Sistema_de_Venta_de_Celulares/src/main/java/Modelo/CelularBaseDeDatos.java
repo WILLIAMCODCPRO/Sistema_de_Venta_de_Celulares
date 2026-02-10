@@ -16,7 +16,18 @@ public class CelularBaseDeDatos extends Celular {
     public void setId(int id) {
         this.id = id;
     }
+    
+    public boolean validarStock() {
+    if (stock <= 0) {
+        System.out.println("No hay stock de este celular");
+        return false;
+    }
+    return true;
+}
 
+    public int getId() {
+        return id;
+    }
     
     
     
@@ -24,7 +35,7 @@ public class CelularBaseDeDatos extends Celular {
 public String toString() {
     return """
            *****************************
-           ID:             %s
+           #Numero %s
            Marca:          %s
            Modelo:         %s
            Sistema Op:     %s

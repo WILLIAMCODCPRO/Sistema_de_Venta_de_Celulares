@@ -11,6 +11,13 @@ public class Venta {
         this.id_cliente = id_cliente;
     }
 
+    public Venta() {
+    }
+
+    public double calcularTotal(double subtotal){
+        return subtotal * 1.19;
+    }
+
     public int getId_venta() {
         return id_venta;
     }

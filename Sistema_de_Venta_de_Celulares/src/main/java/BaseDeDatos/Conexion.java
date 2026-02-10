@@ -9,9 +9,9 @@ public class Conexion {
     public Connection conectar() {
         Connection c = null;
         try {
-            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/tecnostore_db", "campus2023", "campus2023");
+            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/tecnostore_db", "root", "Mmcode1234");
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            System.out.println("No se pudo conectar"+e.getMessage());
         }
         return c;
     }
