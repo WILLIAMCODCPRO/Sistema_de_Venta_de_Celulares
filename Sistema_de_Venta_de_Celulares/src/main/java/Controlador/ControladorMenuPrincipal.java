@@ -3,21 +3,23 @@ package Controlador;
 import Vista.MenuPrincipal;
 import Utilidades.Mensaje;
 import Utilidades.ValidacionEntrada;
-public class ControladorMenuPrincipal {
+public class ControladorMenuPrincipal extends ControladorMenu {
 
     private MenuPrincipal menuPrincipal;
     private ControladorMenuCliente menuCliente;
     private ControladorMenuCelular menuCelular;
     private ControladorMenuVenta menuVenta;
+    private ControladorReporteVenta controladorReporteVenta;
 
     public ControladorMenuPrincipal() {
         menuPrincipal = new MenuPrincipal();
         menuCliente = new ControladorMenuCliente();
         menuCelular = new ControladorMenuCelular();
         menuVenta = new ControladorMenuVenta();
-        
+        controladorReporteVenta = new ControladorReporteVenta();
     }
 
+    @Override
     public void iniciarMenu() {
         int op;
 
@@ -28,8 +30,7 @@ public class ControladorMenuPrincipal {
                 case 1 -> menuCelular.iniciarMenu();
                 case 2 -> menuCliente.iniciarMenu();
                 case 3 -> menuVenta.iniciarMenu();
-                case 4 -> {
-                }
+                case 4 -> controladorReporteVenta.generarReportes();
                 case 5 -> {
                     Mensaje.crearMensajePersonalizado("Saliendo del Programa");
                     Mensaje.crearMensajePersonalizado("Gracias por su visita");

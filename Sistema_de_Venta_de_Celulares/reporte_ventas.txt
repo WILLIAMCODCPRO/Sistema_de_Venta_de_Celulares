@@ -28,3 +28,33 @@ Modelo:         d
 Cantidad:       1
 Total venta:    145.18
 ------------------------
+-----------------------
+      Factura
+
+Cliente:        Emilia
+Fecha:          2026-02-10T22:28:23
+-----------------------
+Modelo:         d
+Cantidad:       50
+Total venta:    7259.0
+------------------------
+-----------------------
+      Factura
+
+Cliente:        Emilia
+Fecha:          2026-02-10T22:29:20
+-----------------------
+Modelo:         xd
+Cantidad:       1
+Total venta:    14.28
+------------------------
+-----------------------
+      Factura
+
+Cliente:        Emilia
+Fecha:          2026-02-10T22:29:39
+-----------------------
+Modelo:         d
+Cantidad:       17
+Total venta:    2468.06
+------------------------

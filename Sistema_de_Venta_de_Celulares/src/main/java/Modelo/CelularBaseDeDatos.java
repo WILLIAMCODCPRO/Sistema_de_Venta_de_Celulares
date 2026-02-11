@@ -12,6 +12,7 @@ public class CelularBaseDeDatos extends Celular {
 
     public CelularBaseDeDatos() {
     }
+    
 
     public void setId(int id) {
         this.id = id;

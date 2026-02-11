@@ -6,7 +6,7 @@ import Vista.MenuCliente;
 import Modelo.Cliente;
 import Persistencia.ClienteDAO;
 
-public class ControladorMenuCliente {
+public class ControladorMenuCliente extends ControladorMenu {
 
     private MenuCliente menuCliente;
     private ClienteDAO clienteDAO;
@@ -18,6 +18,7 @@ public class ControladorMenuCliente {
         controladorCliente = new ControladorCliente();
     }
 
+    @Override
     protected void iniciarMenu() {
 
         int op;

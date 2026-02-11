@@ -9,7 +9,7 @@ import Modelo.CelularBaseDeDatos;
 import Persistencia.CelularDAO;
 import java.util.ArrayList;
 
-public class ControladorMenuCelular {
+public class ControladorMenuCelular extends ControladorMenu {
 
     private MenuCelular menuCelular;
     private CelularDAO celularDAO;
@@ -22,6 +22,7 @@ public class ControladorMenuCelular {
         controladorCelular = new ControladorCelular();
     }
 
+    @Override
     protected void iniciarMenu() {
 
         int op;

@@ -3,7 +3,8 @@ package Modelo;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Factura implements Serializable{
+public class Factura implements Serializable {
+
     private String nombreCliente;
     private LocalDateTime fecha;
     private String modeloCelular;
@@ -18,9 +19,9 @@ public class Factura implements Serializable{
         this.total = total;
     }
 
-       @Override
-public String toString() {
-    return """
+    @Override
+    public String toString() {
+        return """
            -----------------------
                  Factura
            
@@ -32,6 +33,6 @@ public String toString() {
            Total venta:    %s
            ------------------------
            """.formatted(nombreCliente, fecha, modeloCelular, cantidad, total);
-}
-    
+    }
+
 }

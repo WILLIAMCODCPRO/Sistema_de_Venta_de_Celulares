@@ -51,7 +51,7 @@ public class CelularDAO {
             }
 
         } catch (SQLException e) {
-            Mensaje.crearMensajePersonalizado("Hubo un error al buscasr clientes: " + e.getMessage());
+            Mensaje.crearMensajePersonalizado("Hubo un error al buscasr celulares: " + e.getMessage());
         }
 
         return celulares;
