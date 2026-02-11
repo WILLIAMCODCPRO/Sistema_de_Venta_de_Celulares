@@ -1,37 +1,33 @@
-
 package Persistencia;
 
 import Modelo.Factura;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 public class FacturaDAO {
-        ArrayList<Factura> historialFacturas = new ArrayList();
-    
-     public void guardarFacturaVenta(Factura factura){
-         historialFacturas.add(factura);
-        try (ObjectOutputStream oss = new ObjectOutputStream(new FileOutputStream("reporte_ventas.txt"))){
-            oss.writeObject(historialFacturas);
-            
- 
-           
-        }catch (Exception e){
+
+    public  void guardar(Factura factura) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("reporte_ventas.txt", true))) {
+            bw.write(factura.toString());
+
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-     
-     public void obtener(){
-         try (ObjectInputStream oss = new ObjectInputStream(new FileInputStream("reporte_ventas.txt"))){
-            oss.readObject();
-            
- 
-           
-        }catch (Exception e){
+    
+    public String listar(){
+        StringBuilder facturaEntera = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new FileReader("reporte_ventas.txt"))) {
+            String imprimirFacturas;
+            while ((imprimirFacturas = br.readLine()) != null) {
+                facturaEntera.append(imprimirFacturas).append("\n"); 
+            }
+        } catch (Exception e) {
             e.printStackTrace();
         }
-     }
+        return facturaEntera.toString();
+    }
+
 }

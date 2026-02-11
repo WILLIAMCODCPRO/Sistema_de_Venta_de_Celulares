@@ -116,24 +116,23 @@ public class ControladorVenta {
             ventaDAO.editar(registarVenta, idVenta);
             celularEncontrado.setStock(restarStock);
             celularDAO.editar(celularEncontrado, id_celular);
-            
-            
-           /// Generar Factura
+
+            /// Generar Factura
            Venta datosVenta = ventaDAO.buscar(idVenta);
-           Factura factura = new Factura(clienteEncontrado.getNombre(),datosVenta.getFecha(),celularEncontrado.getModelo(),cantidad,datosVenta.getTotal());
-           ventaMenu.generarFactura(factura);
-           facturaDAO.guardarFacturaVenta(factura);
-           
-            
+            Factura factura = new Factura(clienteEncontrado.getNombre(), datosVenta.getFecha(), celularEncontrado.getModelo(), cantidad, datosVenta.getTotal());
+            ventaMenu.generarFactura(factura);
+            facturaDAO.guardar(factura);
+
         }
         if (confirmacion == 2) {
             Mensaje.crearMensajePersonalizado("Registro Canselado");
-            
+
         }
-        
+
     }
-    
-    protected void listar(){
-        
+
+    protected void listar() {
+        String hitorialFacturas = facturaDAO.listar();
+        ventaMenu.listar(hitorialFacturas);
     }
 }
