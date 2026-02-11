@@ -9,12 +9,10 @@ import Persistencia.ClienteDAO;
 public class ControladorMenuCliente extends ControladorMenu {
 
     private MenuCliente menuCliente;
-    private ClienteDAO clienteDAO;
     private ControladorCliente controladorCliente;
 
     protected ControladorMenuCliente() {
         menuCliente = new MenuCliente();
-        clienteDAO = new ClienteDAO();
         controladorCliente = new ControladorCliente();
     }
 
@@ -27,23 +25,13 @@ public class ControladorMenuCliente extends ControladorMenu {
             menuCliente.mostrarMenu();
             op = ValidacionEntrada.validacionOpUsuario(0, 6);
             switch (op) {
-                case 1:
-                    Cliente guardarCliente = controladorCliente.resgistrar();
-                    if (guardarCliente == null) break;
-                    clienteDAO.guardar(guardarCliente);
-                    break;
-                case 2:
-                    
-                    break;
-                case 3:
-
-                    break;
-                case 4:
-
-                    break;
-                case 5:
-                    Mensaje.crearMensajePersonalizado("Volviendo al menu principal");
-                    break;
+                case 1 -> controladorCliente.resgistrar();
+                case 2 -> controladorCliente.obtener();
+                case 3 -> {
+                }
+                case 4 -> {
+                }
+                case 5 -> Mensaje.crearMensajePersonalizado("Volviendo al menu principal");
             }
         } while (op != 5);
 

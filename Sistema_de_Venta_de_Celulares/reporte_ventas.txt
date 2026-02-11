@@ -1,60 +1,30 @@
 -----------------------
       Factura
 
-Cliente:        Emilia
-Fecha:          2026-02-10T19:28:45
+Cliente:        Marian
+Fecha:          2026-02-11T12:21:39
 -----------------------
-Modelo:         xd
-Cantidad:       1
-Total venta:    14.28
+Modelo:         122112
+Cantidad:       23
+Total venta:    3.3175754507E8
 ------------------------
 -----------------------
       Factura
 
-Cliente:        Emilia
-Fecha:          2026-02-10T19:33:16
+Cliente:        wwwdwd
+Fecha:          2026-02-11T12:22:19
 -----------------------
-Modelo:         d
-Cantidad:       12
-Total venta:    1742.1599999999999
+Modelo:         122112
+Cantidad:       73
+Total venta:    1.0529695995699999E9
 ------------------------
 -----------------------
       Factura
 
-Cliente:        Emilia
-Fecha:          2026-02-10T19:33:34
+Cliente:        Marian
+Fecha:          2026-02-11T12:22:44
 -----------------------
-Modelo:         d
-Cantidad:       1
-Total venta:    145.18
-------------------------
------------------------
-      Factura
-
-Cliente:        Emilia
-Fecha:          2026-02-10T22:28:23
------------------------
-Modelo:         d
-Cantidad:       50
-Total venta:    7259.0
-------------------------
------------------------
-      Factura
-
-Cliente:        Emilia
-Fecha:          2026-02-10T22:29:20
------------------------
-Modelo:         xd
-Cantidad:       1
-Total venta:    14.28
-------------------------
------------------------
-      Factura
-
-Cliente:        Emilia
-Fecha:          2026-02-10T22:29:39
------------------------
-Modelo:         d
-Cantidad:       17
-Total venta:    2468.06
+Modelo:         122112
+Cantidad:       111
+Total venta:    1.60109076099E9
 ------------------------

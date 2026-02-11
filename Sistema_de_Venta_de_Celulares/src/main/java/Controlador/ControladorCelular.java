@@ -22,7 +22,9 @@ public class ControladorCelular {
         menuCelular = new MenuCelular();
     }
 
-    protected Celular resgistrar() {
+    protected void resgistrar() {
+        
+        menuCelular.listarGama();
 
         int gama = ValidacionEntrada.validacionOpUsuario(0, 4);
 
@@ -55,17 +57,19 @@ public class ControladorCelular {
         Mensaje.crearMensajePersonalizado("Deseas registar el celular: 1.SI  2.NO");
         int confirmacion = ValidacionEntrada.validacionOpUsuario(0, 3);
         if (confirmacion == 1) {
+            Celular guardarCelular = factoryCelular.crearCelular(gamaSeleccionada, marca, modelo, sistema_operativo, precio, stock);
+            celularDAO.guardar(guardarCelular);
             
-            return factoryCelular.crearCelular(gamaSeleccionada, marca, modelo, sistema_operativo, precio, stock);
         }
         if (confirmacion == 2) {
             Mensaje.crearMensajePersonalizado("Registro Canselado");
         }
-        return null;
+        
     }
 
-    protected ArrayList<CelularBaseDeDatos> obtener() {
-        return celularDAO.listar();
+    protected void obtener() {
+        ArrayList<CelularBaseDeDatos> listarCelulares = celularDAO.listar();
+        menuCelular.listar(listarCelulares);
     }
 
     protected void editar() {

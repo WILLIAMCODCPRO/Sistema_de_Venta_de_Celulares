@@ -6,13 +6,17 @@ import Utilidades.ValidacionEntrada;
 import Utilidades.Mensaje;
 import Modelo.Cliente;
 import Persistencia.ClienteDAO;
+import Vista.MenuCliente;
+import java.util.ArrayList;
 
 public class ControladorCliente {
     
     private ClienteDAO clienteDAO;
+    private MenuCliente menuCliente;
 
     public ControladorCliente() {
         clienteDAO = new ClienteDAO();
+        menuCliente = new MenuCliente();
     }
     
     private String validarIdentificacionUnica(){
@@ -28,7 +32,7 @@ public class ControladorCliente {
         return identificacion;
     }
     
-    protected Cliente resgistrar() {
+    protected void resgistrar() {
 
         Mensaje.crearMensajePersonalizado("Nombre");
         String nombre = ValidacionEntrada.validarString();
@@ -45,11 +49,17 @@ public class ControladorCliente {
         Mensaje.crearMensajePersonalizado("Deseas registar al cliente: 1.SI  2.NO");
         int confirmacion = ValidacionEntrada.validacionOpUsuario(0, 3);
         if (confirmacion == 1) {
-            return new Cliente(nombre, identificacion, correo, telefono);
+            Cliente guardarCliente = new Cliente(nombre, identificacion, correo, telefono);
+            clienteDAO.guardar(guardarCliente);
         }
         if (confirmacion == 2) {
             Mensaje.crearMensajePersonalizado("Registro Canselado");
         }
-        return null;
+        
+    }
+    
+    protected void obtener() {
+        ArrayList<Cliente> listarClientes = clienteDAO.listar();
+        menuCliente.listar(listarClientes);
     }
 }

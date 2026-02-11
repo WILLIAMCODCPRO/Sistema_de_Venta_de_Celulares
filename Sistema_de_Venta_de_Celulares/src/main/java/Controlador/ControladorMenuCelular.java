@@ -12,13 +12,11 @@ import java.util.ArrayList;
 public class ControladorMenuCelular extends ControladorMenu {
 
     private MenuCelular menuCelular;
-    private CelularDAO celularDAO;
     private ControladorCelular controladorCelular;
     
 
     protected ControladorMenuCelular() {
         menuCelular = new MenuCelular();
-        celularDAO = new CelularDAO();
         controladorCelular = new ControladorCelular();
     }
 
@@ -31,16 +29,8 @@ public class ControladorMenuCelular extends ControladorMenu {
             menuCelular.mostrarMenu();
             op = ValidacionEntrada.validacionOpUsuario(0, 6);
             switch (op) {
-                case 1 -> {
-                    menuCelular.listarGama();
-                    Celular guardarCelular = controladorCelular.resgistrar();
-                    if (guardarCelular == null) break;
-                    celularDAO.guardar(guardarCelular);
-                }
-                case 2 -> {
-                    ArrayList<CelularBaseDeDatos> listarCelulares = controladorCelular.obtener();
-                    menuCelular.listar(listarCelulares);
-                }
+                case 1 -> controladorCelular.resgistrar();
+                case 2 -> controladorCelular.obtener();
                 case 3 -> controladorCelular.editar();
                 case 4 -> controladorCelular.borrar();
                 case 5 -> Mensaje.crearMensajePersonalizado("Volviendo al menu principal");
