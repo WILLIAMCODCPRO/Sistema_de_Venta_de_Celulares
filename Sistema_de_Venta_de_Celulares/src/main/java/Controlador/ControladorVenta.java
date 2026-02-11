@@ -91,7 +91,7 @@ public class ControladorVenta {
         } while (celularEncontrado == null);
 
         do {
-            Mensaje.crearMensajePersonalizado("Ingresa la cantidad de celulares vendidos");
+            Mensaje.crearMensajePersonalizado("Ingresa la cantidad de celulares a vender");
             cantidad = ValidacionEntrada.validacionMayor0("Se debe de vender al menos un celular");
           
 
@@ -102,7 +102,7 @@ public class ControladorVenta {
         } while (cantidad > celularEncontrado.getStock());
         restarStock = celularEncontrado.getStock() - cantidad;
         
-        Mensaje.crearMensajePersonalizado("Deseas registar al cliente: 1.SI  2.NO");
+        Mensaje.crearMensajePersonalizado("Deseas registar la venta: 1.SI  2.NO");
         int confirmacion = ValidacionEntrada.validacionOpUsuario(0, 3);
         if (confirmacion == 1) {
             Venta registarVenta = new Venta(id_cliente);
