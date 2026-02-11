@@ -49,3 +49,31 @@ CREATE TABLE detalle_venta(
     FOREIGN KEY (id_venta) REFERENCES venta(id),
     FOREIGN KEY (id_celular) REFERENCES celular(id)
 );
+
+-- Insertar datos
+
+
+INSERT INTO celular (marca, modelo, sistema_operativo, gama, precio, stock) VALUES
+('Samsung', 'Galaxy S23', 'Android', 'Alta', 4200, 15),
+('Apple', 'iPhone 14', 'iOS', 'Alta', 5200, 10),
+('Xiaomi', 'Redmi Note 12', 'Android', 'Media', 1200, 25),
+('Motorola', 'Moto G22', 'Android', 'Media', 950, 30),
+('Nokia', 'C21', 'Android', 'Baja', 550, 40);
+
+
+INSERT INTO cliente (nombre, identificacion, correo, telefono) VALUES
+('Juan Pérez', '0102030405', 'juan.perez@gmail.com', '0991234567'),
+('María Gómez', '0918273645', 'maria.gomez@hotmail.com', '0987654321'),
+('Carlos López', '1102938475', 'carlos.lopez@yahoo.com', '0974561230');
+
+
+INSERT INTO venta (id_cliente, fecha, total) VALUES
+(1, '2026-02-10 14:30:00', 4200),
+(2, '2026-02-10 16:00:00', 2400),
+(3, '2026-02-11 10:15:00', 550);
+
+
+INSERT INTO detalle_venta (id_venta, id_celular, cantidad, subtotal) VALUES
+(1, 1, 1, 4200),   
+(2, 3, 2, 2400),   
+(3, 5, 1, 550);    

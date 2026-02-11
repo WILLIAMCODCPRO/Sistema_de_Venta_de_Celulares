@@ -23,7 +23,7 @@ public class ReporteVentasDAO  {
     public ArrayList<ReporteCelularBajoStock> reporteCelularBajoStock() {
         ArrayList<ReporteCelularBajoStock> celulares = new ArrayList<>();
         try (Connection c = conexion.conectar();) {
-            PreparedStatement ps = c.prepareStatement("select marca,modelo,sistema_operativo,gama,stock from celular");
+            PreparedStatement ps = c.prepareStatement("select marca,modelo,sistema_operativo,gama,stock from celular where stock < 5");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 celulares.add(new ReporteCelularBajoStock(

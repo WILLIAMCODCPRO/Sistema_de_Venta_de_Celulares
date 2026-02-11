@@ -17,8 +17,8 @@ public class MenuReportes {
         } else {
             Mensaje.crearMensajePersonalizado("Celulares que tiene menos de 5 en stock ");
             celulares.stream()
-                    .filter(c -> c.getStock() < 5)
                     .forEach(System.out::println);
+            
         }
 
         if (celularesMasVendios.isEmpty()) {
