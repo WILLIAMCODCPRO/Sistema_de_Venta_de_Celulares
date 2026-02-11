@@ -3,8 +3,7 @@ package Controlador;
 import Utilidades.Mensaje;
 import Utilidades.ValidacionEntrada;
 import Vista.MenuCliente;
-import Modelo.Cliente;
-import Persistencia.ClienteDAO;
+
 
 public class ControladorMenuCliente extends ControladorMenu {
 
@@ -27,10 +26,8 @@ public class ControladorMenuCliente extends ControladorMenu {
             switch (op) {
                 case 1 -> controladorCliente.resgistrar();
                 case 2 -> controladorCliente.obtener();
-                case 3 -> {
-                }
-                case 4 -> {
-                }
+                case 3 -> controladorCliente.editar();
+                case 4 -> controladorCliente.borrar();
                 case 5 -> Mensaje.crearMensajePersonalizado("Volviendo al menu principal");
             }
         } while (op != 5);

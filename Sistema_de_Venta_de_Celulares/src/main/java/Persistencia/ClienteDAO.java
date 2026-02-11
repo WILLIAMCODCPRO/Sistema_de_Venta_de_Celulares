@@ -83,6 +83,32 @@ public class ClienteDAO {
         return cliente;
     }
     
+    public void editar(Cliente cliente, int id) {
+        try (Connection c = conexion.conectar();) {
+            PreparedStatement ps = c.prepareStatement("update cliente set nombre=?, identificacion=?, correo=?, telefono=? where id=?");
+            ps.setString(1, cliente.getNombre());
+            ps.setString(2, cliente.getIdentificacion());
+            ps.setString(3, cliente.getCorreo());
+            ps.setString(4, cliente.getTelefono());
+            ps.setInt(5, id);
+            ps.executeUpdate(); 
+            
+        } catch (SQLException e) {
+            Mensaje.crearMensajePersonalizado("Hubo un error al editar el celular: " + e.getMessage());
+        }
+    }
+    
+    public void eliminar(int id){
+        try (Connection c = conexion.conectar();) {
+            PreparedStatement ps = c.prepareStatement("delete from cliente where id=?");
+            ps.setInt(1, id);
+            ps.executeUpdate(); 
+            Mensaje.crearMensajePersonalizado("Cliente eliminado con exito");
+        } catch (SQLException e) {
+            Mensaje.crearMensajePersonalizado("No se puede elminar este cliente porque ya tiene compras realizadas");
+        }
+    }
+    
     
 }
 

@@ -10,7 +10,7 @@ import Modelo.FactoryCelular;
 import Vista.MenuCelular;
 import java.util.ArrayList;
 
-public class ControladorCelular {
+public class ControladorCelular extends Controlador {
 
     private CelularDAO celularDAO;
     private FactoryCelular factoryCelular;
@@ -22,6 +22,7 @@ public class ControladorCelular {
         menuCelular = new MenuCelular();
     }
 
+    @Override
     protected void resgistrar() {
         
         menuCelular.listarGama();
@@ -67,11 +68,13 @@ public class ControladorCelular {
         
     }
 
+    @Override
     protected void obtener() {
         ArrayList<CelularBaseDeDatos> listarCelulares = celularDAO.listar();
         menuCelular.listar(listarCelulares);
     }
 
+    @Override
     protected void editar() {
         Mensaje.crearMensajePersonalizado("Id del celular que deseas editar");
         int id = ValidacionEntrada.validacionMayor0("El id no puede ser 0 o negativo");
@@ -129,6 +132,7 @@ public class ControladorCelular {
         }
     }
     
+    @Override
     protected void borrar(){
         Mensaje.crearMensajePersonalizado("Ingrese el id del celular que quieras borrar");
         int op = ValidacionEntrada.validacionMayor0("El id no puede ser 0 o negativo");

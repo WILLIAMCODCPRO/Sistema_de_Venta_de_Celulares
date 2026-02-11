@@ -4,10 +4,7 @@ package Controlador;
 import Utilidades.Mensaje;
 import Utilidades.ValidacionEntrada;
 import Vista.MenuCelular;
-import Modelo.Celular;
-import Modelo.CelularBaseDeDatos;
-import Persistencia.CelularDAO;
-import java.util.ArrayList;
+
 
 public class ControladorMenuCelular extends ControladorMenu {
 

@@ -28,6 +28,16 @@ public class MenuCliente implements Menu {
         }
 
     }
+     
+     public void listarOpciones(){
+        Mensaje.crearMensajePersonalizado("""
+                               Ingrese lo que quiere modificar
+                               1. Nombre
+                               2. Identificacion
+                               3. Correo
+                               4. Telefono
+                               """);
+    }
     
    
 }
