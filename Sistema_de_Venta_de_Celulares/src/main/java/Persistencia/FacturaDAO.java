@@ -25,7 +25,7 @@ public class FacturaDAO {
                 facturaEntera.append(imprimirFacturas).append("\n"); 
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Todavia no hay regsitros de ventas generados");
         }
         return facturaEntera.toString();
     }

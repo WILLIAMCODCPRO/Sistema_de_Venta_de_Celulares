@@ -62,9 +62,9 @@ INSERT INTO celular (marca, modelo, sistema_operativo, gama, precio, stock) VALU
 
 
 INSERT INTO cliente (nombre, identificacion, correo, telefono) VALUES
-('Juan Pérez', '0102030405', 'juan.perez@gmail.com', '0991234567'),
-('María Gómez', '0918273645', 'maria.gomez@hotmail.com', '0987654321'),
-('Carlos López', '1102938475', 'carlos.lopez@yahoo.com', '0974561230');
+('Juan Perez', '0102030405', 'juan.perez@gmail.com', '0991234567'),
+('María Gomez', '0918273645', 'maria.gomez@hotmail.com', '0987654321'),
+('Carlos Lopez', '1102938475', 'carlos.lopez@yahoo.com', '0974561230');
 
 
 INSERT INTO venta (id_cliente, fecha, total) VALUES
